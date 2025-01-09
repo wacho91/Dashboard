@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Layout from "./Components/Layout/Layout"
+import { Dashboard } from "@mui/icons-material"
 
 
 
@@ -10,7 +11,11 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />} />
+          <Route path="/" element={<Layout/>}>
+
+            <Route path="/dashboard" element={<Dashboard />} />
+
+          </Route>
         </Routes>
       </BrowserRouter>
   
