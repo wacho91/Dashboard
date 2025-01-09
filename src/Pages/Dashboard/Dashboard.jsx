@@ -1,16 +1,16 @@
 import Orders from "../../Components/Orders/Orders"
 import Statistics from "../../Components/Statistics/Statistics"
 import { cardsData, groupNumber } from "../../Data/Index"
-
+import css from "./Dashboard.module.css"
 
 const Dashboard = () => {
-  return <div>
+  return <div className={css.container}>
     {/* left side */}
-    <div>
-        <div>
-            <div>
+    <div className={css.dashboard}>
+        <div className={`${css.dashboardHead} theme-container`}>
+            <div className={css.head}>
                 <span>Dashboard</span>
-                <div>
+                <div className={css.durationButton}>
                     <select>
                         <option value="">1 week</option>
                         <option value="">1 month</option>
@@ -18,16 +18,16 @@ const Dashboard = () => {
                     </select>
                 </div>
             </div>
-            <div>
+            <div className={css.cards}>
                 {
                     cardsData.map((card, index) => (
-                        <div key={index}>
-                            <div>
+                        <div key={index} className={css.card}>
+                            <div className={css.cardHead}>
                                 <span>{card.title}</span>
                                 <span>+{card.change}</span>
                             </div>
 
-                            <div>
+                            <div className={css.cardAmount}>
                                 <span>$</span>
                                 <span>{groupNumber(card.amount)}</span>
                             </div>
