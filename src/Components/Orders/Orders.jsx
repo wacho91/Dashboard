@@ -1,22 +1,24 @@
 import { groupNumber, ordersData } from "../../Data/Index"
+import OrdersPieChart from "../OrdersPieChart/OrdersPieChart"
+import css from "./Orders.module.css"
 
 const Orders = () => {
   return (
-    <div>
-        <div>
+    <div className={`${css.container} theme-container`}>
+        <div className={css.head}>
             <img src="../../../public/logo.png" alt="logo" />
             <span>Orders today</span>
         </div>
 
-        <div>
+        <div className={`grey-container ${css.stat}`}>
             <span>Amount</span>
             <span>$ {groupNumber(4560)}</span>
         </div>
 
-        <div>
+        <div className={css.orders}>
             {
                 ordersData.map((order, index) => (
-                    <div key={index}>
+                    <div key={index} className={css.order}>
                         <div>
                             <span>{order.name}</span>
                             <span>$ {order.change}</span>
@@ -29,8 +31,9 @@ const Orders = () => {
                 ))
             }
         </div>
-        <div>
+        <div className={css.orderChart}>
             <span>Split by orders</span>
+            <OrdersPieChart />
         </div>
     </div>
   )
