@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Layout from "./Components/Layout/Layout"
-import { Dashboard } from "@mui/icons-material"
+import { Dashboard } from "./Pages/Dashboard/Dashboard"
+import { Calendar } from "./Pages/Calendar/Calendar"
 
 
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Layout/>}>
 
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/calendar" element={<Calendar />} />
 
           </Route>
         </Routes>
